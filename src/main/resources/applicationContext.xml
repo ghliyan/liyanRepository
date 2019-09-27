@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+	 <!--
+         id 和 name 可以同时存在,作为bean的标识
+         class添加的应该是class的全路径
+         dtd : decument type definitiom
+         xsd : xml schema definition
+         文档约束 标签 顺序 层级 属性
+         mybatis 有两种？
+     -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+         声明 哪些需要生产
+         启动时 读取该配置文件
+     -->
+ 
+        
+    <!--<bean id="UserService" class="com.qf.service.UserServiceImpl">
+        &lt;!&ndash;给属性赋值 id时组件&ndash;&gt;
+        <property name="userDao" ref="UserDao_01"/>
+    </bean>-->
+    <!--引用类型ref 基本类型value-->
+    
+
+    <!--构造注入-->
+    <!--自动注入  将工厂中和属性类型一致的赋值
+        自动的时候按Name时id中和构造中的引用名一样  byType时 id所有相同类型的id的都会自动注入
+    -->
+
+</beans>

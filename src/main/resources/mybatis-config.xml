@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <properties resource="db.properties"> </properties>
+
+    <!-- 和spring整合后 environments配置将废除 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 使用jdbc事务管理 -->
+            <transactionManager type="JDBC" />
+            <!-- 数据库连接池 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}" />
+                <property name="url" value="${jdbc.url}" />
+                <property name="username" value="${jdbc.username}" />
+                <property name="password" value="${jdbc.password}" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--<mapper resource="com/qf/mapper/UserMapper.xml"/>  此情况mapper映射配置文件不能在mapper包 必须在resources下-->
+        <!--<mapper class="com.qf.mapper.UserMapper"></mapper>  不常用-->
+        <!--<package name="com.qf.mapper"></package>  此情况需要在根pom.xml文件中配置build resources-->
+    </mappers>
+</configuration>
